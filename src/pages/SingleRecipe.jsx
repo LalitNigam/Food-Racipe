@@ -5,6 +5,7 @@ import { racipecontext } from '../context/RacipeContext';
 const SingleRecipe = () => {
     const {data} = useContext(racipecontext);
     const params = useParams();
+    const recipe = data.find
   return (
     <div>
       SingleRecipe
