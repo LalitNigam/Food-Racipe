@@ -68,18 +68,20 @@ const SingleRecipe = () => {
   }
 
   return recipe ? (
-  <div className='flex md:flex-row flex-col bg-gray-600'>
-    <div className='relative md:w-1/2 w-full p-2 '>
+  <div className='flex md:flex-row flex-col bg-zinc-900 rounded-2xl md:py-9 md:pl-9 md:gap-0 gap-4'>
+    <div className='relative md:w-1/2 w-full p-5 bg-gray-900 border-2 rounded-2xl'>
         {favroite.find((f) => f.id == recipe?.id) ?
         <FaHeart
         onClick={UnFavHandler}
-        className='absolute text-pink-600 text-3xl md:right-15 right-3 md:top-18 top-14'/> :
+        className='absolute text-pink-600 text-4xl md:right-10 right-3 md:top-10 top-14 p-2 rounded-full bg-gray-200'/> :
         <FaRegHeart
         onClick={FavHandler}
-        className='absolute text-pink-600 text-3xl md:right-15 right-3 md:top-18 top-14'/>}
+        className='absolute text-pink-600 text-4xl md:right-10 right-3 md:top-10 top-14 p-2 rounded-full bg-gray-200'/>}
         <h1 className='md:text-6xl text-3xl font-bold mb-2 mt-10 md:mr-0 mr-10'>{recipe.title}</h1>
-        <img className='w-[20vh]' src={recipe.image} alt="" />
-        <h1 className='font-bold text-orange-500 text-2xl'>{recipe.chef}</h1>
+        <div className='flex gap-5 items-center'>
+          <img className='w-[20vh]' src={recipe.image} alt="" />
+          <h1 className='font-bold text-orange-500 text-4xl'>{recipe.chef}</h1>
+        </div>
         <p className='text-xl text-gray-200'>{recipe.description}</p>
     </div>
     <div className='md:w-1/2 w-full p-2 flex justify-center'>
