@@ -55,11 +55,16 @@ const SingleRecipe = () => {
     copyfav.push(recipe);
     setfavroite(copyfav);
     localStorage.setItem("fav", JSON.stringify(copyfav));
+    // Dispatch custom event to notify other components
+    window.dispatchEvent(new Event('favoritesUpdated'));
   }
+  
   const UnFavHandler = () => {
     const filterfav = favroite.filter((f) => f.id != recipe?.id);
     setfavroite(filterfav);
     localStorage.setItem("fav", JSON.stringify(filterfav));
+    // Dispatch custom event to notify other components
+    window.dispatchEvent(new Event('favoritesUpdated'));
   }
 
   return recipe ? (
